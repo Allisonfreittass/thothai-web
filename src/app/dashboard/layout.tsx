@@ -107,10 +107,17 @@ export default function DashboardLayout({
                 <User size={18} />
             </div>
             {isSidebarOpen && (
-                <div className="flex flex-col text-left">
-                    <span className="text-sm font-medium text-slate-200">Minha Conta</span>
-                    <span className="text-[10px] text-slate-500">Ver Perfil e Sair</span>
-                </div>
+              <div className="text-sm font-medium text-slate-200 flex items-center gap-2">
+                <span>Minha Conta</span>
+                <button 
+                  className="px-2 py-1 text-xs bg-yellow-500 rounded"
+                  onClick={(e) =>  {
+                    e.stopPropagation(); 
+                    router.push('/dashboard/plans')}}
+                >
+                  Fazer Upgrade
+                </button>
+              </div>
             )}
           </Link>
         </div>
